@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>✨ Профессиональные водяные знаки PRO</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0f0a1e;
+      --card: #1a1435;
+      --text: #f0f0ff;
+      --muted: #a0a6d0;
+      --accent: #8a5cf6;
+      --accent2: #ff4d8d;
+      --success: #6ee7b7;
+      --gradient: linear-gradient(135deg, #8a5cf6, #ff4d8d, #ffb347);
+    }
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+    html {
+      touch-action: manipulation;
+      height: 100%;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
+      padding: 15px;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(138, 92, 246, 0.15) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 77, 141, 0.1) 0%, transparent 20%);
+      overflow-x: hidden;
+      position: relative;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      min-height: auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      position: relative;
+      display: inline-block;
+      line-height: 1.2;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 3px;
+      background: var(--gradient);
+      border-radius: 2px;
+    }
+    .tagline {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 550px;
+      margin: 12px auto 0;
+      line-height: 1.4;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .form-row > * {
+      flex: 1;
+      min-width: 200px;
+    }
+    .form-row .form-group {
+      margin-bottom: 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #c0c6ff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    label i {
+      color: var(--accent);
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: rgba(30, 25, 60, 0.7);
+      border: 2px solid rgba(138, 92, 246, 0.3);
+      color: white;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(138, 92, 246, 0.2);
+    }
+    textarea {
+      min-height: 50px;
+      resize: vertical;
+    }
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    @media (max-width: 480px) {
+      .style-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      }
+    }
+    .style-option {
+      padding: 12px 8px;
+      background: rgba(30, 25, 60, 0.6);
+      border: 2px solid rgba(138, 92, 246, 0.2);
+      border-radius: 10px;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+      color: #d0d4ff;
+      user-select: none;
+    }
+    .style-option:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(138, 92, 246, 0.25);
+    }
+    .style-option.active {
+      background: linear-gradient(135deg, rgba(138, 92, 246, 0.25), rgba(255, 77, 141, 0.25));
+      border-color: var(--accent);
+      color: white;
+      box-shadow: 0 0 15px rgba(138, 92, 246, 0.3);
+    }
+    .style-preview {
+      font-size: 0.65rem;
+      margin-top: 4px;
+      opacity: 0.8;
+    }
+    .button-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .button-row button {
+      flex: 1;
+      min-width: 120px;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    #applyBtn {
+      background: linear-gradient(135deg, #8a5cf6, #6d47ff);
+      color: white;
+    }
+    #applyBtn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(138, 92, 246, 0.4);
+    }
+    #downloadBtn {
+      background: linear-gradient(135deg, #00d4aa, #00b894);
+      color: #001f15;
+    }
+    #downloadBtn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 212, 170, 0.4);
+    }
+    #clearBtn {
+      background: linear-gradient(135deg, #ff6b8b, #ff4757);
+      color: white;
+    }
+    #clearBtn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 107, 139, 0.4);
+    }
+    #savePresetBtn {
+      background: linear-gradient(135deg, #ffb347, #ffcc33);
+      color: #332100;
+    }
+    #savePresetBtn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 179, 71, 0.4);
+    }
+    .canvas-container {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #111;
+    }
+    canvas {
+      width: 100%;
+      display: block;
+      background: #111;
+    }
+    .canvas-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .watermark-controls {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+    .control-slider {
+      flex: 1;
+      min-width: 160px;
+    }
+    .slider-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+    .slider-value {
+      color: var(--accent);
+      font-weight: bold;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(30, 25, 60, 0.7);
+      outline: none;
+      width: 100%;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(138, 92, 246, 0.7);
+    }
+    .presets-container {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(30, 25, 60, 0.4);
+      border-radius: 12px;
+      border: 1px solid rgba(138, 92, 246, 0.2);
+    }
+    .presets-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .presets-header h3 {
+      font-size: 1rem;
+      color: #c0c6ff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .preset-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .preset-btn {
+      padding: 7px 14px;
+      background: rgba(138, 92, 246, 0.1);
+      border: 1px solid rgba(138, 92, 246, 0.3);
+      border-radius: 18px;
+      color: #c0c6ff;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: all 0.15s;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      position: relative;
+    }
+    .preset-btn:hover {
+      background: rgba(138, 92, 246, 0.25);
+    }
+    .preset-btn.delete {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 16px;
+      height: 16px;
+      padding: 0;
+      background: #ff4757;
+      border: none;
+      display: none;
+    }
+    .preset-btn:hover .delete {
+      display: flex;
+    }
+    .footer-note {
+      text-align: center;
+      margin-top: 25px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+    .loading-spinner {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(138, 92, 246, 0.2);
+      border-radius: 50%;
+      border-top-color: var(--accent);
+      animation: spin 1s ease-in-out infinite;
+      z-index: 10;
+    }
+    @keyframes spin {
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    .notification {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #00d4aa, #00b894);
+      color: #001f15;
+      border-radius: 10px;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transform: translateX(120%);
+      transition: transform 0.3s;
+      z-index: 1000;
+      font-size: 0.9rem;
+    }
+    .notification.show {
+      transform: translateX(0);
+    }
+    
+    .advanced-controls {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .color-pickers {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    .color-picker-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .color-picker-group label {
+      font-size: 0.85rem;
+      margin-bottom: 0;
+    }
+    
+    .position-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .position-btn {
+      padding: 10px;
+      background: rgba(138, 92, 246, 0.1);
+      border: 1px solid rgba(138, 92, 246, 0.3);
+      border-radius: 10px;
+      color: #c0c6ff;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: all 0.15s;
+      text-align: center;
+    }
+    
+    .position-btn:hover {
+      background: rgba(138, 92, 246, 0.25);
+    }
+    
+    .position-btn.active {
+      background: linear-gradient(135deg, rgba(138, 92, 246, 0.25), rgba(255, 77, 141, 0.25));
+      border-color: var(--accent);
+    }
+    
+    /* Исправления для мобильных устройств */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      .container {
+        min-height: auto;
+      }
+      
+      .card {
+        padding: 15px;
+      }
+      
+      .button-row {
+        flex-direction: column;
+      }
+      
+      .button-row button {
+        width: 100%;
+        min-width: auto;
+      }
+      
+      .form-row {
+        flex-direction: column;
+      }
+      
+      .form-row > * {
+        min-width: 100%;
+      }
+      
+      .canvas-container {
+        margin-bottom: 15px;
+      }
+      
+      .style-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      }
+    }
+    
+    /* Гарантируем скролл на всех устройствах */
+    html, body {
+      overflow-y: auto;
+      height: auto;
+    }
+    
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Canvas responsive */
+    #canvas {
+      max-height: 70vh;
+      object-fit: contain;
+      width: 100% !important;
+      height: auto !important;
+    }
+    
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .checkbox-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+    }
+    
+    .checkbox-group label {
+      margin-bottom: 0;
+    }
+    
+    .tabs {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 10px;
+    }
+    
+    .tab {
+      padding: 10px 20px;
+      background: rgba(30, 25, 60, 0.4);
+      border: none;
+      border-radius: 8px 8px 0 0;
+      color: #c0c6ff;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    
+    .tab.active {
+      background: linear-gradient(135deg, rgba(138, 92, 246, 0.3), rgba(255, 77, 141, 0.3));
+      color: white;
+      border-bottom: 2px solid var(--accent);
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-water"></i> Водяные знаки PRO</h1>
+      <p class="tagline">Создавайте профессиональные водяные знаки с множеством эффектов и функций</p>
+    </header>
+
+    <div class="card">
+      <div class="tabs">
+        <button class="tab active" data-tab="basic">Основные</button>
+        <button class="tab" data-tab="advanced">Дополнительно</button>
+        <button class="tab" data-tab="presets">Пресеты</button>
+      </div>
+      
+      <div id="basic-tab" class="tab-content active">
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-image"></i> Загрузить изображение</label>
+            <input type="file" id="imageUpload" accept="image/*">
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-palette"></i> Цвет фона (хромакей)</label>
+            <input type="color" id="bgColor" value="#01b140">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-font"></i> Текст водяного знака</label>
+            <textarea id="watermarkText" rows="1">© Ваш бренд 2024</textarea>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-paint-brush"></i> Цвет текста</label>
+            <input type="color" id="textColor" value="#ffffff">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label><i class="fas fa-star"></i> Стиль водяного знака</label>
+          <div class="style-grid">
+            <div class="style-option active" data-style="neon">
+              <div>Неоновый</div>
+              <div class="style-preview">Яркое свечение</div>
+            </div>
+            <div class="style-option" data-style="gradient3d">
+              <div>3D Градиент</div>
+              <div class="style-preview">Объём + цвета</div>
+            </div>
+            <div class="style-option" data-style="luxury">
+              <div>Люкс</div>
+              <div class="style-preview">Золото + тени</div>
+            </div>
+            <div class="style-option" data-style="glass">
+              <div>Стеклянный</div>
+              <div class="style-preview">Прозрачность</div>
+            </div>
+            <div class="style-option" data-style="hologram">
+              <div>Голограмма</div>
+              <div class="style-preview">Радужный эффект</div>
+            </div>
+            <div class="style-option" data-style="cyberpunk">
+              <div>Киберпанк</div>
+              <div class="style-preview">Футуризм</div>
+            </div>
+            <div class="style-option" data-style="vintage">
+              <div>Винтаж</div>
+              <div class="style-preview">Старинный стиль</div>
+            </div>
+            <div class="style-option" data-style="sticker">
+              <div>Наклейка</div>
+              <div class="style-preview">Подложка + тень</div>
+            </div>
+            <div class="style-option" data-style="glitch">
+              <div>Глитч</div>
+              <div class="style-preview">Digital эффект</div>
+            </div>
+            <div class="style-option" data-style="chrome">
+              <div>Хром</div>
+              <div class="style-preview">Металлический блеск</div>
+            </div>
+            <div class="style-option" data-style="fire">
+              <div>Огненный</div>
+              <div class="style-preview">Пламя и жар</div>
+            </div>
+            <div class="style-option" data-style="ice">
+              <div>Ледяной</div>
+              <div class="style-preview">Холод и лёд</div>
+            </div>
+            <div class="style-option" data-style="galaxy">
+              <div>Галактика</div>
+              <div class="style-preview">Космос и звёзды</div>
+            </div>
+            <div class="style-option" data-style="electric">
+              <div>Электрический</div>
+              <div class="style-preview">Молнии и энергия</div>
+            </div>
+            <div class="style-option" data-style="magic">
+              <div>Магический</div>
+              <div class="style-preview">Волшебство и чары</div>
+            </div>
+            <div class="style-option" data-style="watercolor">
+              <div>Акварель</div>
+              <div class="style-preview">Художественный стиль</div>
+            </div>
+            <div class="style-option" data-style="pixel">
+              <div>Пиксельный</div>
+              <div class="style-preview">Ретро игры</div>
+            </div>
+            <div class="style-option" data-style="neon-glow">
+              <div>Неон 2.0</div>
+              <div class="style-preview">Улучшенный неон</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="watermark-controls">
+          <div class="control-slider">
+            <div class="slider-label">
+              <span>Размер: <span id="sizeValue">42</span>px</span>
+            </div>
+            <input type="range" id="sizeSlider" min="12" max="120" value="42">
+          </div>
+          <div class="control-slider">
+            <div class="slider-label">
+              <span>Прозрачность: <span id="opacityValue">80</span>%</span>
+            </div>
+            <input type="range" id="opacitySlider" min="10" max="100" value="80">
+          </div>
+          <div class="control-slider">
+            <div class="slider-label">
+              <span>Угол: <span id="angleValue">0</span>°</span>
+            </div>
+            <input type="range" id="angleSlider" min="-45" max="45" value="0">
+          </div>
+        </div>
+      </div>
+      
+      <div id="advanced-tab" class="tab-content">
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-text-height"></i> Межстрочный интервал</label>
+            <input type="range" id="lineHeightSlider" min="0.8" max="2" step="0.1" value="1.2">
+            <div class="slider-label">
+              <span>Значение: <span id="lineHeightValue">1.2</span></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-border-style"></i> Толщина контура</label>
+            <input type="range" id="strokeWidthSlider" min="0" max="10" value="0">
+            <div class="slider-label">
+              <span>Толщина: <span id="strokeWidthValue">0</span>px</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-bezier-curve"></i> Размытие тени</label>
+            <input type="range" id="shadowBlurSlider" min="0" max="50" value="0">
+            <div class="slider-label">
+              <span>Размытие: <span id="shadowBlurValue">0</span>px</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-fill-drip"></i> Цвет контура</label>
+            <input type="color" id="strokeColor" value="#000000">
+          </div>
+        </div>
+        
+        <div class="color-pickers">
+          <div class="color-picker-group">
+            <label><i class="fas fa-fill-drip"></i> Цвет тени</label>
+            <input type="color" id="shadowColor" value="#000000">
+          </div>
+          <div class="color-picker-group">
+            <label><i class="fas fa-sun"></i> Цвет подсветки</label>
+            <input type="color" id="highlightColor" value="#ffffff">
+          </div>
+          <div class="color-picker-group">
+            <label><i class="fas fa-adjust"></i> Цвет фона текста</label>
+            <input type="color" id="textBgColor" value="#00000000">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label><i class="fas fa-border-all"></i> Позиция водяного знака</label>
+          <div class="position-controls">
+            <div class="position-btn" data-position="top-left">↖ Сверху слева</div>
+            <div class="position-btn" data-position="top-center">↑ Сверху по центру</div>
+            <div class="position-btn" data-position="top-right">↗ Сверху справа</div>
+            <div class="position-btn active" data-position="center">⊕ По центру</div>
+            <div class="position-btn" data-position="bottom-left">↙ Снизу слева</div>
+            <div class="position-btn" data-position="bottom-center">↓ Снизу по центру</div>
+            <div class="position-btn" data-position="bottom-right">↘ Снизу справа</div>
+            <div class="position-btn" data-position="tile">🧱 Мозаика</div>
+          </div>
+        </div>
+        
+        <div class="checkbox-group">
+          <input type="checkbox" id="repeatPattern" checked>
+          <label for="repeatPattern"><i class="fas fa-layer-group"></i> Повторять узор по всему изображению</label>
+        </div>
+        
+        <div class="form-group">
+          <label><i class="fas fa-sliders-h"></i> Настройки узора</label>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Горизонтальный шаг</label>
+              <input type="range" id="patternXSlider" min="50" max="300" value="150">
+              <div class="slider-label">
+                <span>Шаг: <span id="patternXValue">150</span>px</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Вертикальный шаг</label>
+              <input type="range" id="patternYSlider" min="50" max="300" value="150">
+              <div class="slider-label">
+                <span>Шаг: <span id="patternYValue">150</span>px</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="presets-tab" class="tab-content">
+        <div class="presets-container">
+          <div class="presets-header">
+            <h3><i class="fas fa-save"></i> Сохранённые пресеты</h3>
+            <button id="savePresetBtn" class="preset-btn">
+              <i class="fas fa-plus"></i> Сохранить текущий
+            </button>
+          </div>
+          <div class="preset-buttons" id="savedPresets">
+            <div class="preset-btn" data-preset="instagram">
+              <i class="fab fa-instagram"></i> Instagram
+            </div>
+            <div class="preset-btn" data-preset="youtube">
+              <i class="fab fa-youtube"></i> YouTube
+            </div>
+            <div class="preset-btn" data-preset="premium">
+              <i class="fas fa-crown"></i> Premium
+            </div>
+            <div class="preset-btn" data-preset="minimal">
+              <i class="fas fa-minimize"></i> Минимализм
+            </div>
+            <div class="preset-btn" data-preset="cyber">
+              <i class="fas fa-robot"></i> Кибер
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="applyBtn"><i class="fas fa-magic"></i> Применить</button>
+        <button id="clearBtn"><i class="fas fa-trash"></i> Очистить</button>
+        <button id="downloadBtn"><i class="fas fa-download"></i> Скачать</button>
+      </div>
+    </div>
+
+    <div class="canvas-container">
+      <div class="loading-spinner" id="loadingSpinner"></div>
+      <div class="canvas-overlay" id="canvasOverlay">Применено!</div>
+      <canvas id="canvas" width="960" height="540"></canvas>
+    </div>
+
+    <div class="footer-note">
+      <p><i class="fas fa-lightbulb"></i> Совет: Используйте вкладку "Дополнительно" для тонкой настройки водяного знака</p>
+      <p style="margin-top: 5px;">Все изображения обрабатываются только на вашем устройстве</p>
+    </div>
+  </div>
+
+  <div class="notification" id="notification">Изображение скачано!</div>
+
+  <script>
+    // Основные константы
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    let currentStyle = 'neon';
+    let userImage = null;
+    let fontSize = 42;
+    let opacity = 0.8;
+    let angle = 0;
+    let position = 'center';
+    let repeatPattern = true;
+    let patternX = 150;
+    let patternY = 150;
+    let lineHeight = 1.2;
+    let strokeWidth = 0;
+    let shadowBlur = 0;
+    let savedPresets = [];
+
+    // Элементы управления
+    const sizeSlider = document.getElementById('sizeSlider');
+    const opacitySlider = document.getElementById('opacitySlider');
+    const angleSlider = document.getElementById('angleSlider');
+    const lineHeightSlider = document.getElementById('lineHeightSlider');
+    const strokeWidthSlider = document.getElementById('strokeWidthSlider');
+    const shadowBlurSlider = document.getElementById('shadowBlurSlider');
+    const patternXSlider = document.getElementById('patternXSlider');
+    const patternYSlider = document.getElementById('patternYSlider');
+    
+    const sizeValue = document.getElementById('sizeValue');
+    const opacityValue = document.getElementById('opacityValue');
+    const angleValue = document.getElementById('angleValue');
+    const lineHeightValue = document.getElementById('lineHeightValue');
+    const strokeWidthValue = document.getElementById('strokeWidthValue');
+    const shadowBlurValue = document.getElementById('shadowBlurValue');
+    const patternXValue = document.getElementById('patternXValue');
+    const patternYValue = document.getElementById('patternYValue');
+    
+    const textColorPicker = document.getElementById('textColor');
+    const bgColorPicker = document.getElementById('bgColor');
+    const strokeColor = document.getElementById('strokeColor');
+    const shadowColor = document.getElementById('shadowColor');
+    const highlightColor = document.getElementById('highlightColor');
+    const textBgColor = document.getElementById('textBgColor');
+    const watermarkText = document.getElementById('watermarkText');
+    const imageUpload = document.getElementById('imageUpload');
+    const repeatPatternCheckbox = document.getElementById('repeatPattern');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    const canvasOverlay = document.getElementById('canvasOverlay');
+    const notification = document.getElementById('notification');
+    const savedPresetsContainer = document.getElementById('savedPresets');
+
+    // Инициализация
+    drawDefaultBackground();
+    drawWatermark();
+    loadSavedPresets();
+
+    // Вкладки
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(`${tab.dataset.tab}-tab`).classList.add('active');
+      });
+    });
+
+    // Позиция
+    document.querySelectorAll('.position-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.position-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        position = btn.dataset.position;
+        drawWatermark();
+      });
+    });
+
+    // Слайдеры
+    const sliders = [
+      { slider: sizeSlider, value: sizeValue, prop: 'fontSize', parser: parseInt },
+      { slider: opacitySlider, value: opacityValue, prop: 'opacity', parser: v => parseInt(v) / 100 },
+      { slider: angleSlider, value: angleValue, prop: 'angle', parser: parseInt },
+      { slider: lineHeightSlider, value: lineHeightValue, prop: 'lineHeight', parser: parseFloat },
+      { slider: strokeWidthSlider, value: strokeWidthValue, prop: 'strokeWidth', parser: parseInt },
+      { slider: shadowBlurSlider, value: shadowBlurValue, prop: 'shadowBlur', parser: parseInt },
+      { slider: patternXSlider, value: patternXValue, prop: 'patternX', parser: parseInt },
+      { slider: patternYSlider, value: patternYValue, prop: 'patternY', parser: parseInt }
+    ];
+
+    sliders.forEach(({ slider, value, prop, parser }) => {
+      slider.addEventListener('input', () => {
+        window[prop] = parser(slider.value);
+        value.textContent = slider.value;
+        drawWatermark();
+      });
+    });
+
+    // Чекбоксы и цветовые пикеры
+    repeatPatternCheckbox.addEventListener('change', () => {
+      repeatPattern = repeatPatternCheckbox.checked;
+      drawWatermark();
+    });
+
+    [textColorPicker, bgColorPicker, strokeColor, shadowColor, highlightColor, textBgColor].forEach(picker => {
+      picker.addEventListener('input', drawWatermark);
+    });
+
+    // Текст
+    watermarkText.addEventListener('input', drawWatermark);
+
+    // Переключение стилей
+    document.querySelectorAll('.style-option').forEach(el => {
+      el.addEventListener('click', () => {
+        document.querySelectorAll('.style-option').forEach(e => e.classList.remove('active'));
+        el.classList.add('active');
+        currentStyle = el.dataset.style;
+        drawWatermark();
+        showOverlay();
+      });
+    });
+
+    // Загрузка изображения
+    imageUpload.addEventListener('change', e => {
+      const file = e.target.files[0];
+      if (!file) {
+        userImage = null;
+        drawDefaultBackground();
+        drawWatermark();
+        return;
+      }
+      
+      showLoading(true);
+      const img = new Image();
+      img.onload = () => {
+        userImage = img;
+        resizeCanvas();
+        showLoading(false);
+      };
+      img.onerror = () => {
+        showLoading(false);
+        alert('Не удалось загрузить изображение');
+      };
+      img.src = URL.createObjectURL(file);
+    });
+
+    // Кнопки
+    document.getElementById('applyBtn').addEventListener('click', () => {
+      drawWatermark();
+      showOverlay();
+    });
+
+    document.getElementById('clearBtn').addEventListener('click', clearCanvas);
+
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.download = `watermark-${currentStyle}-${Date.now()}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+      showNotification('Изображение скачано!');
+    });
+
+    document.getElementById('savePresetBtn').addEventListener('click', savePreset);
+
+    // Пресеты
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+      if (btn.dataset.preset) {
+        btn.addEventListener('click', () => applyPreset(btn.dataset.preset));
+      }
+    });
+
+    function applyPreset(preset) {
+      const presets = {
+        instagram: {
+          style: 'gradient3d',
+          fontSize: 38,
+          opacity: 0.85,
+          textColor: '#ff00ff',
+          text: '@instagram',
+          position: 'bottom-right'
+        },
+        youtube: {
+          style: 'sticker',
+          fontSize: 34,
+          opacity: 0.9,
+          textColor: '#ff0000',
+          text: 'YouTube Channel',
+          position: 'bottom-center'
+        },
+        premium: {
+          style: 'luxury',
+          fontSize: 46,
+          opacity: 0.85,
+          textColor: '#ffd700',
+          text: 'PREMIUM',
+          position: 'center'
+        },
+        minimal: {
+          style: 'glass',
+          fontSize: 32,
+          opacity: 0.7,
+          textColor: '#ffffff',
+          text: '© 2024',
+          position: 'bottom-left'
+        },
+        cyber: {
+          style: 'cyberpunk',
+          fontSize: 40,
+          opacity: 0.9,
+          textColor: '#00ffff',
+          text: 'CYBER',
+          position: 'top-center'
+        }
+      };
+
+      if (presets[preset]) {
+        const p = presets[preset];
+        currentStyle = p.style;
+        fontSize = p.fontSize;
+        opacity = p.opacity;
+        textColorPicker.value = p.textColor;
+        watermarkText.value = p.text;
+        position = p.position;
+        
+        updateSliders();
+        updateUI();
+        drawWatermark();
+        showNotification(`Применён пресет: ${preset}`);
+      }
+    }
+
+    function savePreset() {
+      const name = prompt('Введите название пресета:', 'Мой пресет');
+      if (!name) return;
+      
+      const preset = {
+        name,
+        style: currentStyle,
+        fontSize,
+        opacity,
+        textColor: textColorPicker.value,
+        text: watermarkText.value,
+        position,
+        strokeWidth,
+        shadowBlur,
+        lineHeight,
+        date: new Date().toISOString()
+      };
+      
+      savedPresets.push(preset);
+      savePresetsToStorage();
+      updateSavedPresetsUI();
+      showNotification('Пресет сохранён!');
+    }
+
+    function updateSavedPresetsUI() {
+      savedPresetsContainer.innerHTML = '';
+      
+      // Стандартные пресеты
+      const standardPresets = ['instagram', 'youtube', 'premium', 'minimal', 'cyber'];
+      standardPresets.forEach(preset => {
+        const btn = document.createElement('div');
+        btn.className = 'preset-btn';
+        btn.dataset.preset = preset;
+        btn.innerHTML = `<i class="fab fa-${preset === 'youtube' ? 'youtube' : preset === 'instagram' ? 'instagram' : 'star'}"></i> ${preset.charAt(0).toUpperCase() + preset.slice(1)}`;
+        btn.addEventListener('click', () => applyPreset(preset));
+        savedPresetsContainer.appendChild(btn);
+      });
+      
+      // Пользовательские пресеты
+      savedPresets.forEach((preset, index) => {
+        const btn = document.createElement('div');
+        btn.className = 'preset-btn';
+        btn.innerHTML = `
+          <i class="fas fa-user"></i> ${preset.name}
+          <span class="preset-btn delete" onclick="deletePreset(${index})">×</span>
+        `;
+        btn.addEventListener('click', () => loadPreset(preset));
+        savedPresetsContainer.appendChild(btn);
+      });
+    }
+
+    function loadPreset(preset) {
+      currentStyle = preset.style;
+      fontSize = preset.fontSize;
+      opacity = preset.opacity;
+      textColorPicker.value = preset.textColor;
+      watermarkText.value = preset.text;
+      position = preset.position;
+      strokeWidth = preset.strokeWidth || 0;
+      shadowBlur = preset.shadowBlur || 0;
+      lineHeight = preset.lineHeight || 1.2;
+      
+      updateSliders();
+      updateUI();
+      drawWatermark();
+      showNotification(`Загружен пресет: ${preset.name}`);
+    }
+
+    function deletePreset(index) {
+      event.stopPropagation();
+      if (confirm('Удалить этот пресет?')) {
+        savedPresets.splice(index, 1);
+        savePresetsToStorage();
+        updateSavedPresetsUI();
+        showNotification('Пресет удалён');
+      }
+    }
+
+    function savePresetsToStorage() {
+      try {
+        localStorage.setItem('watermarkPresets', JSON.stringify(savedPresets));
+      } catch (e) {
+        console.error('Не удалось сохранить пресеты:', e);
+      }
+    }
+
+    function loadSavedPresets() {
+      try {
+        const saved = localStorage.getItem('watermarkPresets');
+        if (saved) {
+          savedPresets = JSON.parse(saved);
+          updateSavedPresetsUI();
+        }
+      } catch (e) {
+        console.error('Не удалось загрузить пресеты:', e);
+      }
+    }
+
+    function clearCanvas() {
+      userImage = null;
+      imageUpload.value = '';
+      watermarkText.value = '© Ваш бренд 2024';
+      bgColorPicker.value = '#01b140';
+      textColorPicker.value = '#ffffff';
+      currentStyle = 'neon';
+      fontSize = 42;
+      opacity = 0.8;
+      angle = 0;
+      position = 'center';
+      strokeWidth = 0;
+      shadowBlur = 0;
+      lineHeight = 1.2;
+      
+      updateSliders();
+      updateUI();
+      drawDefaultBackground();
+      drawWatermark();
+      showNotification('Все очищено!');
+      showOverlay();
+    }
+
+    function drawDefaultBackground() {
+      ctx.fillStyle = bgColorPicker.value;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function drawWatermark() {
+      if (userImage) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(userImage, 0, 0, canvas.width, canvas.height);
+      } else {
+        drawDefaultBackground();
+      }
+
+      const text = watermarkText.value.trim() || '© Ваш бренд';
+      const lines = text.split('\n');
+      
+      if (repeatPattern && position === 'tile') {
+        drawTiledWatermark(lines);
+      } else {
+        drawSingleWatermark(lines);
+      }
+    }
+
+    function drawSingleWatermark(lines) {
+      const textColor = textColorPicker.value;
+      let x, y;
+      
+      // Определяем позицию
+      switch(position) {
+        case 'top-left':
+          x = 50;
+          y = 50;
+          break;
+        case 'top-center':
+          x = canvas.width / 2;
+          y = 50;
+          break;
+        case 'top-right':
+          x = canvas.width - 50;
+          y = 50;
+          break;
+        case 'bottom-left':
+          x = 50;
+          y = canvas.height - 50;
+          break;
+        case 'bottom-center':
+          x = canvas.width / 2;
+          y = canvas.height - 50;
+          break;
+        case 'bottom-right':
+          x = canvas.width - 50;
+          y = canvas.height - 50;
+          break;
+        default: // center
+          x = canvas.width / 2;
+          y = canvas.height / 2;
+      }
+      
+      ctx.save();
+      if (position.includes('left')) ctx.textAlign = 'left';
+      else if (position.includes('right')) ctx.textAlign = 'right';
+      else ctx.textAlign = 'center';
+      
+      if (position.includes('top')) ctx.textBaseline = 'top';
+      else if (position.includes('bottom')) ctx.textBaseline = 'bottom';
+      else ctx.textBaseline = 'middle';
+      
+      ctx.translate(x, y);
+      ctx.rotate(angle * Math.PI / 180);
+      ctx.translate(-x, -y);
+      
+      ctx.font = `bold ${fontSize}px 'Segoe UI', 'Arial', sans-serif`;
+      
+      // Рисуем каждую строку
+      lines.forEach((line, index) => {
+        const lineY = y + (index * fontSize * lineHeight - (lines.length - 1) * fontSize * lineHeight / 2);
+        drawTextWithStyle(line, x, lineY, textColor);
+      });
+      
+      ctx.restore();
+    }
+
+    function drawTiledWatermark(lines) {
+      const textColor = textColorPicker.value;
+      
+      for (let y = patternY; y < canvas.height; y += patternY) {
+        for (let x = patternX; x < canvas.width; x += patternX) {
+          ctx.save();
+          ctx.translate(x, y);
+          ctx.rotate(angle * Math.PI / 180);
+          
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.font = `bold ${fontSize}px 'Segoe UI', 'Arial', sans-serif`;
+          
+          // Рисуем каждую строку
+          lines.forEach((line, index) => {
+            const lineY = index * fontSize * lineHeight - (lines.length - 1) * fontSize * lineHeight / 2;
+            drawTextWithStyle(line, 0, lineY, textColor);
+          });
+          
+          ctx.restore();
+        }
+      }
+    }
+
+    function drawTextWithStyle(text, x, y, textColor) {
+      // Фон текста
+      if (textBgColor.value !== '#00000000') {
+        ctx.save();
+        const metrics = ctx.measureText(text);
+        const padding = 5;
+        ctx.globalAlpha = opacity * 0.5;
+        ctx.fillStyle = textBgColor.value;
+        ctx.roundRect(
+          x - metrics.width / 2 - padding,
+          y - fontSize / 2 - padding,
+          metrics.width + padding * 2,
+          fontSize + padding * 2,
+          5
+        );
+        ctx.fill();
+        ctx.restore();
+      }
+      
+      // Применяем стиль
+      switch(currentStyle) {
+        case 'neon':
+          drawNeonStyle(text, x, y, textColor);
+          break;
+        case 'gradient3d':
+          drawGradient3DStyle(text, x, y, textColor);
+          break;
+        case 'luxury':
+          drawLuxuryStyle(text, x, y, textColor);
+          break;
+        case 'glass':
+          drawGlassStyle(text, x, y, textColor);
+          break;
+        case 'hologram':
+          drawHologramStyle(text, x, y, textColor);
+          break;
+        case 'cyberpunk':
+          drawCyberpunkStyle(text, x, y, textColor);
+          break;
+        case 'vintage':
+          drawVintageStyle(text, x, y, textColor);
+          break;
+        case 'sticker':
+          drawStickerStyle(text, x, y, textColor);
+          break;
+        case 'glitch':
+          drawGlitchStyle(text, x, y, textColor);
+          break;
+        case 'chrome':
+          drawChromeStyle(text, x, y, textColor);
+          break;
+        case 'fire':
+          drawFireStyle(text, x, y, textColor);
+          break;
+        case 'ice':
+          drawIceStyle(text, x, y, textColor);
+          break;
+        case 'galaxy':
+          drawGalaxyStyle(text, x, y, textColor);
+          break;
+        case 'electric':
+          drawElectricStyle(text, x, y, textColor);
+          break;
+        case 'magic':
+          drawMagicStyle(text, x, y, textColor);
+          break;
+        case 'watercolor':
+          drawWatercolorStyle(text, x, y, textColor);
+          break;
+        case 'pixel':
+          drawPixelStyle(text, x, y, textColor);
+          break;
+        case 'neon-glow':
+          drawNeonGlowStyle(text, x, y, textColor);
+          break;
+        default:
+          drawBasicStyle(text, x, y, textColor);
+      }
+      
+      // Контур
+      if (strokeWidth > 0) {
+        ctx.strokeStyle = strokeColor.value;
+        ctx.lineWidth = strokeWidth;
+        ctx.globalAlpha = opacity;
+        ctx.strokeText(text, x, y);
+      }
+    }
+
+    // Стили водяных знаков (упрощённые версии для примера)
+    function drawNeonStyle(text, x, y, textColor) {
+      ctx.shadowColor = textColor;
+      ctx.shadowBlur = 20 + shadowBlur;
+      ctx.fillStyle = textColor;
+      ctx.globalAlpha = opacity;
+      ctx.fillText(text, x, y);
+    }
+
+    function drawGradient3DStyle(text, x, y, textColor) {
+      const gradient = ctx.createLinearGradient(x - 100, y - 50, x + 100, y + 50);
+      gradient.addColorStop(0, textColor);
+      gradient.addColorStop(0.5, highlightColor.value);
+      gradient.addColorStop(1, textColor);
+      
+      ctx.shadowColor = shadowColor.value;
+      ctx.shadowBlur = 10 + shadowBlur;
+      ctx.fillStyle = gradient;
+      ctx.globalAlpha = opacity;
+      ctx.fillText(text, x, y);
+    }
+
+    function drawLuxuryStyle(text, x, y, textColor) {
+      const gradient = ctx.createLinearGradient(x - 80, y, x + 80, y);
+      gradient.addColorStop(0, '#FFD700');
+      gradient.addColorStop(0.5, '#FFF8DC');
+      gradient.addColorStop(1, '#DAA520');
+      
+      ctx.shadowColor = 'rgba(218, 165, 32, 0.6)';
+      ctx.shadowBlur = 15 + shadowBlur;
+      ctx.shadowOffsetX = 3;
+      ctx.shadowOffsetY = 3;
+      ctx.fillStyle = gradient;
+      ctx.globalAlpha = opacity;
+      ctx.fillText(text, x, y);
+    }
+
+    function drawFireStyle(text, x, y, textColor) {
+      const gradient = ctx.createLinearGradient(x - 60, y, x + 60, y);
+      gradient.addColorStop(0, '#ff0000');
+      gradient.addColorStop(0.5, '#ff9900');
+      gradient.addColorStop(1, '#ffff00');
+      
+      ctx.shadowColor = '#ff5500';
+      ctx.shadowBlur = 25 + shadowBlur;
+      ctx.fillStyle = gradient;
+      ctx.globalAlpha = opacity;
+      ctx.fillText(text, x, y);
+      
+      // Эффект пламени
+      for(let i = 0; i < 3; i++) {
+        ctx.globalAlpha = opacity * 0.3;
+        ctx.fillStyle = '#ff3300';
+        ctx.fillText(text, x + Math.random() * 4 - 2, y + Math.random() * 4 - 2);
+      }
+    }
+
+    function drawIceStyle(text, x, y, textColor) {
+      const gradient = ctx.createLinearGradient(x - 60, y, x + 60, y);
+      gradient.addColorStop(0, '#00ffff');
+      gradient.addColorStop(0.3, '#ffffff');
+      gradient.addColorStop(0.7, '#a0ffff');
+      gradient.addColorStop(1, '#00aaff');
+      
+      ctx.shadowColor = '#00aaff';
+      ctx.shadowBlur = 20 + shadowBlur;
+      ctx.fillStyle = gradient;
+      ctx.globalAlpha = opacity;
+      ctx.fillText(text, x, y);
+      
+      // Эффект льда
+      ctx.globalAlpha = opacity * 0.4;
+      ctx.fillStyle = '#ffffff';
+      for(let i = 0; i < 5; i++) {
+        const offset = i * 2;
+        ctx.fillText(text, x + offset, y + offset);
+      }
+    }
+
+    function drawGalaxyStyle(text, x, y, textColor) {
+      const gradient = ctx.createLinearGradient(x - 80, y, x + 80, y);
+      gradient.addColorStop(0, '#8a2be2');
+      gradient.addColorStop(0.3, '#4b0082');
+      gradient.addColorStop(0.6, '#00008b');
+      gradient.addColorStop(1, '#8a2be2');
+      
+      ctx.shadowColor = '#9400d3';
+      ctx.shadowBlur = 30 + shadowBlur;
+      ctx.fillStyle = gradient;
+      ctx.globalAlpha = opacity;
+      ctx.fillText(text, x, y);
+      
+      // Звёзды
+      ctx.globalAlpha = opacity * 0.6;
+      ctx.fillStyle = '#ffffff';
+      for(let i = 0; i < 20; i++) {
+        const size = Math.random() * 3;
+        const starX = x - 100 + Math.random() * 200;
+        const starY = y - 50 + Math.random() * 100;
+        ctx.fillRect(starX, starY, size, size);
+      }
+    }
+
+    function drawElectricStyle(text, x, y, textColor) {
+      const gradient = ctx.createLinearGradient(x - 60, y, x + 60, y);
+      gradient.addColorStop(0, '#00ffff');
+      gradient.addColorStop(0.5, '#ffffff');
+      gradient.addColorStop(1, '#00ffff');
+      
+      ctx.shadowColor = '#00ffff';
+      ctx.shadowBlur = 25 + shadowBlur;
+      ctx.fillStyle = gradient;
+      ctx.globalAlpha = opacity;
+      ctx.fillText(text, x, y);
+      
+      // Молнии
+      ctx.globalAlpha = opacity * 0.5;
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1;
+      for(let i = 0; i < 3; i++) {
+        ctx.beginPath();
+        ctx.moveTo(x - 50 + i * 20, y - 30);
+        ctx.lineTo(x - 30 + i * 20, y + 30);
+        ctx.stroke();
+      }
+    }
+
+    function drawMagicStyle(text, x, y, textColor) {
+      const gradient = ctx.createLinearGradient(x - 70, y, x + 70, y);
+      gradient.addColorStop(0, '#ff00ff');
+      gradient.addColorStop(0.3, '#00ffff');
+      gradient.addColorStop(0.7, '#ffff00');
+      gradient.addColorStop(1, '#ff00ff');
+      
+      ctx.shadowColor = '#ff00ff';
+      ctx.shadowBlur = 35 + shadowBlur;
+      ctx.fillStyle = gradient;
+      ctx.globalAlpha = opacity;
+      ctx.fillText(text, x, y);
+      
+      // Магические частицы
+      ctx.globalAlpha = opacity * 0.3;
+      ctx.fillStyle = '#ffffff';
+      for(let i = 0; i < 15; i++) {
+        const size = Math.random() * 4;
+        const particleX = x - 80 + Math.random() * 160;
+        const particleY = y - 40 + Math.random() * 80;
+        ctx.beginPath();
+        ctx.arc(particleX, particleY, size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function drawBasicStyle(text, x, y, textColor) {
+      ctx.fillStyle = textColor;
+      ctx.globalAlpha = opacity;
+      ctx.fillText(text, x, y);
+    }
+
+    // Остальные стили (упрощённые)
+    function drawGlassStyle(text, x, y, textColor) { drawBasicStyle(text, x, y, textColor); }
+    function drawHologramStyle(text, x, y, textColor) { drawBasicStyle(text, x, y, textColor); }
+    function drawCyberpunkStyle(text, x, y, textColor) { drawBasicStyle(text, x, y, textColor); }
+    function drawVintageStyle(text, x, y, textColor) { drawBasicStyle(text, x, y, textColor); }
+    function drawStickerStyle(text, x, y, textColor) { drawBasicStyle(text, x, y, textColor); }
+    function drawGlitchStyle(text, x, y, textColor) { drawBasicStyle(text, x, y, textColor); }
+    function drawChromeStyle(text, x, y, textColor) { drawBasicStyle(text, x, y, textColor); }
+    function drawWatercolorStyle(text, x, y, textColor) { drawBasicStyle(text, x, y, textColor); }
+    function drawPixelStyle(text, x, y, textColor) { drawBasicStyle(text, x, y, textColor); }
+    function drawNeonGlowStyle(text, x, y, textColor) { drawBasicStyle(text, x, y, textColor); }
+
+    function updateSliders() {
+      sizeSlider.value = fontSize;
+      sizeValue.textContent = fontSize;
+      opacitySlider.value = Math.round(opacity * 100);
+      opacityValue.textContent = Math.round(opacity * 100);
+      angleSlider.value = angle;
+      angleValue.textContent = angle;
+      lineHeightSlider.value = lineHeight;
+      lineHeightValue.textContent = lineHeight;
+      strokeWidthSlider.value = strokeWidth;
+      strokeWidthValue.textContent = strokeWidth;
+      shadowBlurSlider.value = shadowBlur;
+      shadowBlurValue.textContent = shadowBlur;
+      patternXSlider.value = patternX;
+      patternXValue.textContent = patternX;
+      patternYSlider.value = patternY;
+      patternYValue.textContent = patternY;
+    }
+
+    function updateUI() {
+      document.querySelectorAll('.style-option').forEach(el => el.classList.remove('active'));
+      document.querySelector(`[data-style="${currentStyle}"]`).classList.add('active');
+      document.querySelectorAll('.position-btn').forEach(el => el.classList.remove('active'));
+      document.querySelector(`[data-position="${position}"]`).classList.add('active');
+      repeatPatternCheckbox.checked = repeatPattern;
+    }
+
+    function showLoading(show) {
+      loadingSpinner.style.display = show ? 'block' : 'none';
+    }
+
+    function showOverlay() {
+      canvasOverlay.textContent = 'Применено!';
+      canvasOverlay.style.opacity = '1';
+      setTimeout(() => {
+        canvasOverlay.style.opacity = '0';
+      }, 800);
+    }
+
+    function showNotification(message) {
+      notification.textContent = message;
+      notification.classList.add('show');
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 2500);
+    }
+
+    // Polyfill для roundRect
+    if (!CanvasRenderingContext2D.prototype.roundRect) {
+      CanvasRenderingContext2D.prototype.roundRect = function(x, y, width, height, radius) {
+        if (width < 2 * radius) radius = width / 2;
+        if (height < 2 * radius) radius = height / 2;
+        this.beginPath();
+        this.moveTo(x + radius, y);
+        this.arcTo(x + width, y, x + width, y + height, radius);
+        this.arcTo(x + width, y + height, x, y + height, radius);
+        this.arcTo(x, y + height, x, y, radius);
+        this.arcTo(x, y, x + width, y, radius);
+        this.closePath();
+        return this;
+      };
+    }
+
+    // Responsive canvas
+    const resizeCanvas = () => {
+      const container = canvas.parentElement;
+      const maxWidth = Math.min(960, container.clientWidth - 30);
+      const maxHeight = Math.min(540, window.innerHeight * 0.6);
+      
+      const ratio = 16/9;
+      let newWidth = maxWidth;
+      let newHeight = maxWidth / ratio;
+      
+      if (newHeight > maxHeight) {
+        newHeight = maxHeight;
+        newWidth = maxHeight * ratio;
+      }
+      
+      canvas.width = newWidth;
+      canvas.height = newHeight;
+      canvas.style.width = `${newWidth}px`;
+      canvas.style.height = `${newHeight}px`;
+      
+      if (userImage) {
+        ctx.drawImage(userImage, 0, 0, canvas.width, canvas.height);
+        drawWatermark();
+      } else {
+        drawDefaultBackground();
+        drawWatermark();
+      }
+    };
+
+    window.addEventListener('load', () => {
+      resizeCanvas();
+    });
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+    });
+
+    document.addEventListener('touchmove', function(event) {
+      if (event.target === canvas && event.touches.length > 1) {
+        event.preventDefault();
+      }
+    }, { passive: false });
+  </script>
+</body>
+</html>
